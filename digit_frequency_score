@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int digitFrequencyScore(int n) {
+        int a;
+        unordered_map<int,int>mpp;
+        while(n!=0){
+            a=n%10;
+            mpp[a]++;
+            n/=10;
+        }
+        int sum=0;
+        for(auto i:mpp){
+            sum+=i.first*i.second;
+        }
+        return sum;
+        
+    }
+};
