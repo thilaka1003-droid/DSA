@@ -1,0 +1,20 @@
+class Solution {
+public:
+    string thousandSeparator(int n) {
+        if(n==0) return "0";
+        string s1=to_string(n);
+        string ans;
+        int i=0;
+        while(n!=0){
+            int d=n%10;
+            ans=to_string(d)+ans;
+            n/=10;
+            i++;
+            if(i%3==0 && s1.size()>3 && i!=s1.size()){
+                ans='.'+ans;
+            }
+        }
+        return ans;
+        
+    }
+};
